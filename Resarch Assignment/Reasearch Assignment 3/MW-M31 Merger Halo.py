@@ -295,22 +295,26 @@ rM31=rn[indexM31]
 # In[154]:
 
 
-# Rotated M31 Disk - FACE ON
+# Rotated MW-M31 halo - FACE ON
 
-# M31 Disk Density 
+#Set up 2x2 plot
 fig, ax = plt.subplots(2, 2)
+#plot all particles
 ax[0, 0].hist2d(rn[:,0],rn[:,1], bins=1000, norm=LogNorm(), cmap='magma')
 ax[0, 0].set_title('All Particles')
+#plot just MW particles
 ax[0, 1].hist2d(rMW[:,0],rMW[:,1], bins=1000, norm=LogNorm(), cmap='viridis')
 ax[0, 1].set_title('MW Halo')
+#plot M31
 ax[1, 0].hist2d(rM31[:,0],rM31[:,1], bins=1000, norm=LogNorm(), cmap='plasma')
 ax[1, 0].set_title('M31 Halo')
+#bloth both MW and M31 but in diffrent colors
 ax[1, 1].hist2d(rMW[:,0],rMW[:,1], bins=1000, norm=LogNorm(), cmap='cool')
 ax[1, 1].hist2d(rM31[:,0],rM31[:,1], bins=1000, norm=LogNorm(), cmap='autumn')
 ax[1, 1].set_title('MW and M31 Halo')
 
 
-
+#focus on center of galaxy
 ax[0, 0].set_xlim(-1000,1000)
 ax[0, 0].set_ylim(-1000,1000)
 
@@ -350,25 +354,29 @@ matplotlib.rcParams['ytick.labelsize'] = label_size
 plt.savefig('FaceOn_Density.png')
 
 
-# In[155]:
+# In[154]:
 
 
-# Rotated M31 Disk - FACE ON
+# Rotated MW-M31 halo - side yz
 
-# M31 Disk Density 
+#Set up 2x2 plot
 fig, ax = plt.subplots(2, 2)
+#plot all particles
 ax[0, 0].hist2d(rn[:,2],rn[:,1], bins=1000, norm=LogNorm(), cmap='magma')
 ax[0, 0].set_title('All Particles')
+#plot just MW particles
 ax[0, 1].hist2d(rMW[:,2],rMW[:,1], bins=1000, norm=LogNorm(), cmap='viridis')
 ax[0, 1].set_title('MW Halo')
+#plot M31
 ax[1, 0].hist2d(rM31[:,2],rM31[:,1], bins=1000, norm=LogNorm(), cmap='plasma')
 ax[1, 0].set_title('M31 Halo')
-ax[1, 1].hist2d(rMW[:,2],rMW[:,1], bins=1000, norm=LogNorm(), cmap='viridis')
-ax[1, 1].hist2d(rM31[:,2],rM31[:,1], bins=1000, norm=LogNorm(), cmap='plasma')
+#bloth both MW and M31 but in diffrent colors
+ax[1, 1].hist2d(rMW[:,2],rMW[:,1], bins=1000, norm=LogNorm(), cmap='cool')
+ax[1, 1].hist2d(rM31[:,2],rM31[:,1], bins=1000, norm=LogNorm(), cmap='autumn')
 ax[1, 1].set_title('MW and M31 Halo')
 
 
-
+#focus on center of galaxy
 ax[0, 0].set_xlim(-1000,1000)
 ax[0, 0].set_ylim(-1000,1000)
 
@@ -408,25 +416,29 @@ matplotlib.rcParams['ytick.labelsize'] = label_size
 plt.savefig('FaceOn_Density.png')
 
 
-# In[156]:
+# In[154]:
 
 
-# Rotated M31 Disk - FACE ON
+# Rotated MW-M31 halo - side xz
 
-# M31 Disk Density 
+#Set up 2x2 plot
 fig, ax = plt.subplots(2, 2)
+#plot all particles
 ax[0, 0].hist2d(rn[:,2],rn[:,0], bins=1000, norm=LogNorm(), cmap='magma')
 ax[0, 0].set_title('All Particles')
+#plot just MW particles
 ax[0, 1].hist2d(rMW[:,2],rMW[:,0], bins=1000, norm=LogNorm(), cmap='viridis')
 ax[0, 1].set_title('MW Halo')
+#plot M31
 ax[1, 0].hist2d(rM31[:,2],rM31[:,0], bins=1000, norm=LogNorm(), cmap='plasma')
 ax[1, 0].set_title('M31 Halo')
-ax[1, 1].hist2d(rMW[:,2],rMW[:,0], bins=1000, norm=LogNorm(), cmap='viridis')
-ax[1, 1].hist2d(rM31[:,2],rM31[:,0], bins=1000, norm=LogNorm(), cmap='plasma')
+#bloth both MW and M31 but in diffrent colors
+ax[1, 1].hist2d(rMW[:,2],rMW[:,0], bins=1000, norm=LogNorm(), cmap='cool')
+ax[1, 1].hist2d(rM31[:,2],rM31[:,0], bins=1000, norm=LogNorm(), cmap='autumn')
 ax[1, 1].set_title('MW and M31 Halo')
 
 
-
+#focus on center of galaxy
 ax[0, 0].set_xlim(-1000,1000)
 ax[0, 0].set_ylim(-1000,1000)
 
