@@ -1,0 +1,201 @@
+% mnras_template.tex 
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.3 released April 2024
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.3 April 2024
+%   Updated \pubyear to print the current year automatically
+% v3.2 July 2023
+%	Updated guidance on use of amssymb package
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+\usepackage{newtxtext,newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+
+% Allow "Thomas van Noord" and "Simon de Laguarde" and alike to be sorted by "N" and "L" etc. in the bibliography.
+% Write the name in the bibliography as "\VAN{Noord}{Van}{van} Noord, Thomas"
+\DeclareRobustCommand{\VAN}[3]{#2}
+\let\VANthebibliography\thebibliography
+\def\thebibliography{\DeclareRobustCommand{\VAN}[3]{##3}\VANthebibliography}
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+% Only include extra packages if you really need them. Avoid using amssymb if newtxmath is enabled, as these packages can cause conflicts. newtxmatch covers the same math symbols while producing a consistent Times New Roman font. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Short title, max. 45 characters]{Effects of Component Galaxies on M31-Mw Remnant Final Structure}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[Colette R. Larson]{
+Colette Renee Larson,$^{1}$\thanks{E-mail: colettel1@arizona.edu}
+\\
+% List of institutions
+$^{1}$University of Arizona, Tuscon, Arizona, United States
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Prints the current year, for the copyright statements etc. To achieve a fixed year, replace the expression with a number. 
+\pubyear{2025}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+% Abstract of the paper
+\begin{abstract}
+As Galaxies merge they create 
+\end{abstract}
+
+% Select between one and six entries from the list of approved keywords.
+% Don't make up new ones.
+\begin{keywords}
+Major Merger -- Oblate/Prolate/Triaxial -- Ellipticity -- Dark Matter Halo -- Halo Shape 
+\end{keywords}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+Our universe is composed of stars, most of which are bound together her and act is ways Newton's laws and baryons (gas, dust and stars) cannot describe\cite{Willman_2012}. These clusters of stars are called \textbf{galaxies}. Over time these \textbf{galaxies evolve} rotating, collapsing, changing shape sometimes even colliding. As galaxies merge, individual stars don't collide, but the original galaxies’ energies, gravitational forces and other orbital parameters interact with each other to create a remnant that is not simply the superposition of the colliding galaxies on top of each other, but rather a completely new structure \cite{10.1093/mnras/stz1306}. Of interest to this paper is how \textbf{major mergers} (where both colliding galaxies are of similar sizes) affect the structure of the remnant’s \textbf{dark matter halo} which is the non-baryonic matter that extends far beyond the baryon galaxy in a halo. In this paper the \textbf{halo shape}, which is the structure of the halo, is defined by the \textbf{ellipticity} or the roundness of a remnant’s halo. If the halo is a perfect sphere it is \textbf{oblate}. If its a squashed ovoid with 2 axis of about the same size its \textbf{prolate} and if it has three different sized axis it is \textbf{triaxial}.
+
+Understanding how galaxies merge is important because the universe is not static. It is constantly moving and expanding, resulting in galaxies running into each other and merging. Dark matter, in particular, is one of the driving forces of galaxy formation meaning "Dark matter haloes are the exclusive sites of galaxy, group, and cluster formation"\cite{10.1093/mnras/stz1306}. As such, studying the effects mergers have on halos  can give us valuable insight into not only on what will happen to merging galaxies but also valuable insight into how  galaxies are formed in the past. For example, we find that in simulated mergers “MHD halos are rounder than DMO halos at all radii” \cite{10.1093/mnras/stz2873}. It is often seen that older galaxies are smaller and less defined than new galaxies. Being able to analyze these galaxies would help us better understand whether this difference is due to mergers or some other factor of the early universe, like a change in angular momentum. 
+
+One thing we know about galaxy mergers is that the ellipticity is greatly dependent on its energy and mass. If we define the factors $\kappa $ and $\lambda$ such that:
+\begin{eqnarray*}
+\kappa \equiv \frac{E_0^{\prime }}{E_0} \left(\frac{M}{M^{\prime }} \right)^{5/3}, 
+\lambda = \frac{\sqrt{|E_0|}|{\bf J}|}{GM^{5/2}} 
+\end{eqnarray*}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{m_stz1306fig19.jpeg}
+    \caption{Oblateness of halo bases on $\kappa $ and  $\lambda $}
+    \label{fig:enter-label}
+\end{figure}
+We can see a near perfect linear relationship with the ratio between the minor over the major axis (c/a) and minor over the intermediate axis (c/b) respectively, see figure 1 \cite{10.1093/mnras/stz1306}. 
+We also know that the density profile of a halo is near universal "regardless of mass or cosmological model" \cite{10.1093/mnras/stz1307}. One of the most accurate version of these profiles is the Einasto profile, which is written as:
+\begin{eqnarray*}
+\rho (r) &=& \rho _{-2} \exp \left(-\frac{2}{\alpha _\mathrm{ E}}\left[\left(\frac{r}{r_{-2}}\right)^{\alpha _\mathrm{ E}} - 1 \right]\right) \, 
+\end{eqnarray*}
+in wich $\alpha _\mathrm{ E}$ is the Einasto shape parameter and ${r_{-2}}$ is the radius where the logarithmic slope is -2 \cite{10.1093/mnras/stz1307}. 
+Another thing we know is the usual shape of halos. Studies have shown that halos can be both \textbf{triaxial} having three different length axis and prolate (c/b $>$ b/a) with high mass halos being less spherical then the less massive halos, and concentrated halos more spherical still \cite{10.1093/mnras/sty3531}.
+
+One of the biggest questions in the realm of galaxy mergers is how do we simulate accurate mergers and the interplay between dark and baryonic matter. It was only recently we learned that “strong baryonic feedback effects, such as stellar feedback and black hole feedback” are necessary to form disks and late time galaxies \cite{10.1093/mnras/stz2873}. Similarly \textbf{N-body simulations}, where the change of a system of N objects is simulated using known equations of model their behavior,  are imperfect simulations that do not perfectly model galaxy formation, “because the coupling of baryons and DM can have a significant impact on the structure of DM haloes especially in the inner halo where galaxies reside” \cite{10.1093/mnras/sty3531}. Another question is exactly what effect major mergers have on halo structure \cite{10.1093/mnras/stz1306}. While we have a general idea of what the result of a merge will look like and the main factors in said result, the fine details are still little understood.
+
+
+\section{The Project}
+
+In this paper I will compare the shapes of the MW and M31 components of their remnant’s dark matter halo. Using the high resolution simulation data at snap 630 which is at 9 gyr, approximately 2.5 gyr after the initial merger, I will fit ellipses to the density profile of both the total remnant and each individual component galaxy. I will then plot these ellipses and compare the final elliptically and shape to determine how each galaxy contributes to the final shape of the remnant. This fitting and comparing process will be done for multiple angles of the galaxy to get a 3 dimensional understanding of the remnant halo and how it has been affected by the merger.
+
+This study will help us understand the effect major mergers have on halo structures of the remnant. In particular, this study will help advance our understanding of the fate of individual galaxies at the end of a merger and what that means for a remnant. It will also advance our understanding of the accuracy of N body simulations. 
+
+My project will study how the original galaxies contribute to the final remnant's halo, allowing us to better understand how individual galaxies effect merges and the resulting halo structure. Similarly my results can be compared to actual remnants and their structure to better understand where and why the simulation differs from reality. This in turn will allow us to better understand the physics behind galaxy mergers and how to better model that with N body simulations.
+
+
+
+\section{Methodology.}
+
+This paper will use the simulation of the MW-M31-M33 merger generated by Roeland van der Marel and his team. Using the observed M31 transverse velocity from Hubble Space telescope \cite{web:Nasa:article}. NOTE:Add rest of simulation data from "The M31 Velocity Vector.III. Future Milky Way-M31-M33 Orbital Evolution, Merging, and Fate of the Sun" https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2012/05/STScI-01EVSRDK9HAKSRTDFGD1YE7QJ4.pdf
+
+
+To determine the contribution of the MW vs. M31 halo particles to the final shape of the remnant. I will start by concatenating the snap 630 MW and M31 files and isolating for only the halo particles. This snap is at time 9 gyr which is long enough after the merger the remnant should have settled. I will use the high-resolution files to avoid the 'noticeable differences' in shape of the galaxy at low kpc from the center that some low resolution simulations experiences \cite{10.1093/mnras/stz2873}. I will then find the center of mass of each object using the CenterOfMass code previous developed and reorientate the remnant so its angular momentum is aligned with z axis. I will then fit an ellipse to the density profile at at semi-major axis of 1000 kpc. This value was chosen as the density contour shows this radius includes about 90\% of the total galaxies dark matter which is enough matter to see the larger structure of the remnant without including particles that have been flung too far from the COM. Ellipses will be fit to this radius using photutils to analysis the density profile. I will then graph the fitted ellipses from various perspectives to visually see the shape and distribution of the particles as well as compare the length of axis to evaluate the final shape (figure 2). 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{ASTR400B mock up graph.jpg}
+    \caption{A theorestical sketch of the final figure of the paper. Ellipses are fit to each component of the remant halo as well as the full remnant and ploted over top of each other. This is then repeated for each face of the galaxy, xy, xz, yz}
+    \label{A Rough Sketch of Final Figure}
+\end{figure}
+
+My final step will be to graph the fitted ellipse of the system. For each perspective xy, xz, and yz, I will plot the fitted ellipses with respect to each components center of mass. This will allow us to visually see where each component is and its shape. If the ellipses overlap, both galaxies contribute equally to the shape of the remnant but if there is a gap there is not an even distribution of mass.
+
+
+As this is a Major Merger I expect for galaxies to mix nearly completely, resulting in a “near-complete mixing of old and new material” \cite{Frenk_2012}. Ergo I predict the remnant will be a triaxial ellipsoid with no significant structures. The core will likely be denser than the outer radii but there should not be any significant structures like arms or spirals.
+
+
+\section{Results}
+To be added
+\section{Discussion}
+To be added
+\section*{Data Availability}
+To be added
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
+
+% The best way to enter references is to use BibTeX:
+
+\bibliographystyle{mnras}
+\bibliography{References(1)} % if your bibtex file is called example.bib
+
+
+% Alternatively you could enter them by hand, like this:
+% This method is tedious and prone to error if you have lots of references
+%\begin{thebibliography}{99}
+%\bibitem[\protect\citeauthoryear{Author}{2012}]{Author2012}
+%Author A.~N., 2013, Journal of Improbable Astronomy, 1, 1
+%\bibitem[\protect\citeauthoryear{Others}{2013}]{Others2013}
+%Others S., 2012, Journal of Interesting Stuff, 17, 198
+%\end{thebibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Don't change these lines
+\bsp	% typesetting comment
+\label{lastpage}
+\end{document}
+
+% End of mnras_template.tex
